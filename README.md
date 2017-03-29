@@ -27,3 +27,27 @@ Recovering the lost file using CyberGod-KSGMPRH
 ![alt tag](https://raw.githubusercontent.com/VISWESWARAN1998/CyberGod-KSGMPRH/master/Screenshots/Screenshot%20(535).png)
 
 If are in need of recovering the deleted files you could try this product.
+
+# Donate this project for staying alive
+
+```html
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="BVLS79W5B2N9G">
+<table>
+<tr><td><input type="hidden" name="on0" value="Select your preferred donation amount">Select your preferred donation amount</td></tr><tr><td><select name="os0">
+	<option value="Option 1">Option 1 $3.00 USD</option>
+	<option value="Option 2">Option 2 $5.00 USD</option>
+	<option value="Option 3">Option 3 $10.00 USD</option>
+	<option value="Option 4">Option 4 $20.00 USD</option>
+	<option value="Option 5">Option 5 $50.00 USD</option>
+	<option value="Option 6">Option 6 $100.00 USD</option>
+</select> </td></tr>
+</table>
+<input type="hidden" name="currency_code" value="USD">
+<input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+
+```
