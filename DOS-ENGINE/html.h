@@ -1,6 +1,10 @@
 // SWAMI KARUPPASWAMI THUNNAI
 #pragma once
 #include<string>
+
+/*
+This is the newest feature and will improve later in DOS engine
+*/
 class HTML
 {
 private:
