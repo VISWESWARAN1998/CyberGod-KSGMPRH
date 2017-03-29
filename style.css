@@ -1,0 +1,84 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 18 Feb, 2017, 3:27:01 PM
+    Author     : Visweswaran
+*/
+
+
+body
+{
+    background-color:#0b0b17
+}
+
+.style1
+{
+  
+       color:#ebe217;
+       font-size: 100px;
+       display:inline;
+}
+
+.style2
+{
+    color:red;
+    font-size: 50px;
+    display: compact;
+    text-align: center;
+}
+
+.style3
+{
+    color:#00e604;
+    font-size: 45px;
+    text-align: center;
+}
+
+.style4
+{
+    color: whitesmoke;
+    font-size: 30px;
+}
+
+
+
+
+button
+{
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+      
+}
+
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
