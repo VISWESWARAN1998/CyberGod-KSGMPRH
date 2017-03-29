@@ -1,4 +1,5 @@
 #pragma once
+// Currently we have no plugin system!
 class PluginPanel : public wxWindow
 {
     wxListBox *pluginListBox;
