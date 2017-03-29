@@ -1,4 +1,4 @@
-# CyberGod-KSGMPRH
+# CyberGod KSGMPRH
 
 This is an open-source anti-virus which comes along with a bunch of tools which is useful for your day-to-day activity. This security toolkit is programmed in such a way that it will work with your primary anti-virus/anti-malware solution without making much performance hit.
 
