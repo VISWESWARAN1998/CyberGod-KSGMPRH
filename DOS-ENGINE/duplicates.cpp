@@ -145,12 +145,21 @@ void Duplicates<duplicates>::get_duplicates()
 	std::set<duplicates>::iterator itr1 = hash_test_results.begin();
 	std::set<duplicates>::iterator itr2 = hash_test_results.end();
 	HTML html;
-	html.create_file(L"duplicates.html", "Duplicate files finder", "NULL");
+	html.create_file(L"duplicates.html", "CyberGod KSGMPRH");
+	html.initialize_headers();
+	html.initialize_message("table", "NULL");
+	html.initialize_message("tr", "NULL");
+	html.document(L"th", L"FILE");
+	html.document(L"th", L"STATUS");
+	html.finalize_message("tr");
 	for (std::set<duplicates>::iterator itr = itr1; itr != itr2; itr++)
 	{
 		duplicate_file_count++;//
 		std::cout <<" [DUPLICATE]: " <<*itr << "\n";
-		html.document(L"p", *itr);
+		html.initialize_message("tr", "NULL");
+		html.document(L"td", *itr);
+		html.document(L"td", L"IDENTIFIED AS A DUPLICATE");
+		html.finalize_message("tr");
 	}
 	html.finalize_html();
 	// end the duplicates in the database

@@ -188,7 +188,12 @@ std::string random_binary()
 	return random_data;
 }
 
-//This scan will destroy the whole directory which cannot be recovered @ any cause
+//This scan will destroy the whole directory which may not be recovered at any cause.
+// This feature(removing multiple files) at a time is currently being dis-abled,
+// Because it replaces the contents of file with different binary content which works
+// quiet similar like encryption since we are removing multiple files and the application
+// shows the behaviour of encrypting multiple files, some anti-virus detects this ability as a malware
+// But sooner we will get white-listed and this feature will be included.
 bool Gutmann::scan(const wchar_t * sDir)
 {
 	WIN32_FIND_DATA find_file;
