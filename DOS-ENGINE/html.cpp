@@ -87,7 +87,7 @@ bool HTML::finalize_html()
 	html.open(location,std::ios::app);
 	if (html.is_open())
 	{
-		html << "</body>\n</html>";
+		html << "\n</body>\n</html>";
 		html.close();
 		return true;
 	}

@@ -39,7 +39,10 @@ int wmain(int argc,wchar_t* argv[])
 		Malware<std::wstring> obj;
 		obj.set_boost_scan(false);
 		obj.scan(global_location.c_str());
-		obj.scan_scheduled_files();
+		std::string get_option;
+		std::cout << "\n\nScan Scheduled files [y/n]: ";
+		std::getline(std::cin,get_option);
+		if(get_option=="y")obj.scan_scheduled_files();
 		obj.display_suspicious_files();
 		process();
 		break;
