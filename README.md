@@ -28,3 +28,4 @@ Recovering the lost file using CyberGod-KSGMPRH
 
 If are in need of recovering the deleted files you could try this product.
 
+Hashes contributed by : VirusShare
