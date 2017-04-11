@@ -25,7 +25,7 @@ int wmain(int argc,wchar_t* argv[])
 	std::cout << "| (C) 2017, VISWESWARAN NAGASIVAM |\n";
 	std::cout << "===================================\n";
 	int option;
-	std::cout << "1.Malware scan\n2.Duplicate Files Remover\n3.Recovery\n4.Secure remove\n5.Remove the shortcut virus\n6.Show Identiity\n7.Password strength checker\n8.Autorun Checker\n9.Scan USB\n10.Quick scan\nChoice : ";
+	std::cout << "1.Malware scan\n2.Duplicate Files Remover\n3.Recovery\n4.Secure remove\n5.Remove the shortcut virus\n6.Show Identiity\n7.Password strength checker\n8.Autorun Checker\n9.Scan USB\n10.Quick scan\n11.Update Database from local files\nChoice : ";
 	std::cin >> option;
 	std::cin.ignore();
 	std::wstring global_location;
@@ -168,13 +168,13 @@ int wmain(int argc,wchar_t* argv[])
 		obj.display_suspicious_files();
 		break;
 	}
-	/*case 11:
+	case 11:
 	{
 		Plugin plugin;
-		plugin.get_available_plugins();
-		plugin.execute_plugin("plugin.py",argc,argv);
+		//plugin.get_available_plugins();
+		plugin.execute_plugin("Adder.py",argc,argv);
 		break;
-	}*/
+	}
 	default:
 		break;
 	}
