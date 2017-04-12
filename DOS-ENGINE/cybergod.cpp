@@ -15,10 +15,12 @@
 #include"usb.h"
 #include<extras.h>
 #include"plugin.h"
+#include"verifyier.h"
 
 
 int wmain(int argc,wchar_t* argv[])
 {
+	boot_loader();
 	std::cout << "===================================\n";
 	std::cout << "| CyberGod KSGMPRH - DOS ENGINE   |\n";
 	std::cout << "| A GPL Licensed Security Toolkit |\n";
