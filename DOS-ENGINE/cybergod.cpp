@@ -16,6 +16,8 @@
 #include<extras.h>
 #include"plugin.h"
 #include"verifyier.h"
+#include"virustotal.h"
+#include<thread>
 
 
 int wmain(int argc,wchar_t* argv[])
@@ -35,18 +37,39 @@ int wmain(int argc,wchar_t* argv[])
 	{
 	case 1:
 	{
-		std::cout << "\nEnter the location :";
-		std::getline(std::wcin, global_location);
 		system("cls");
-		Malware<std::wstring> obj;
-		obj.set_boost_scan(false);
-		obj.scan(global_location.c_str());
-		std::string get_option;
-		std::cout << "\n\nScan Scheduled files [y/n]: ";
-		std::getline(std::cin,get_option);
-		if(get_option=="y")obj.scan_scheduled_files();
-		obj.display_suspicious_files();
-		process();
+		int malware_choice;
+		std::cout << "1.Scan for malware from a particular location\n2.VirusTotal the log file\nCHOICE: ";
+		std::cin >> malware_choice;
+		std::cin.ignore();
+		switch (malware_choice)
+		{
+		case 1:
+		{
+			std::cout << "\nEnter the location :";
+			std::getline(std::wcin, global_location);
+			system("cls");
+			Malware<std::wstring> obj;
+			obj.set_boost_scan(false);
+			obj.scan(global_location.c_str());
+			std::string get_option;
+			std::cout << "\n\nScan Scheduled files [y/n]: ";
+			std::getline(std::cin, get_option);
+			if (get_option == "y")obj.scan_scheduled_files();
+			obj.display_suspicious_files();
+			process();
+		}
+		case 2:
+		{
+			VirusTotal virus_total;
+			std::wstring file;
+			std::cout << "LOCATION OF LOG: ";
+			std::getline(std::wcin, file);
+			virus_total.scan_from_log(file);
+		}
+		default:
+			break;
+		}
 		break;
 	}
 	case 2:
