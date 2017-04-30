@@ -5,13 +5,6 @@
 #include<Python.h>
 #include<boost\filesystem.hpp>
 
-// Some C based code which is used for handing the process effectively
-
-struct PerfromVirusTotal
-{
-	bool is_completed = true;
-}virus;
-
 bool VirusTotal::scan_from_log(std::wstring file)
 {
 	typedef std::set<std::wstring>::iterator iterator;
@@ -31,13 +24,10 @@ bool VirusTotal::scan_from_log(std::wstring file)
 				std::string file_name = path.filename().string();
 				if (is_common_extension(extension) == true)
 				{
-					// we will create the daemon
-					if (virus.is_completed == false)while (virus.is_completed != true)std::cout << "Waiting for the process...\n";
 					std::cout << "scanning for " << file_name<<"\n";
 					std::string hash = calculate_md5(*itr);
 					std::thread start(scan_for_virustotal, hash);
-					start.detach();
-					std::cout<<"[THREAD ID]: "<<start.get_id()<<"\n";
+					start.join();
 				}
 				else std::cout << "[UNWANTED - NOT SCANNED]: " << file_name << "\n";
 			}
@@ -57,15 +47,18 @@ void scan_for_virustotal(std::string hash)
 	std::string md5 = hash;
 	if (md5 != "failed")
 	{
-		virus.is_completed = false;
-		std::string scan = "Hunter.scan(\"" + md5 + "\")";
-		// We should call our Python function here
-		Py_Initialize();
-		PyRun_SimpleString("import sys; sys.path.append('.')");
-		PyRun_SimpleString("import Hunter;");
-		PyRun_SimpleString(scan.c_str());
-		Py_Finalize();
-		std::cout << "JSON: " << md5 << ".json\n";
-		virus.is_completed = true;
+		try {
+			std::string scan = "Hunter.scan(\"" + md5 + "\")";
+			// We should call our Python function here
+			Py_Initialize();
+			PyRun_SimpleString("import sys; sys.path.append('.')");
+			PyRun_SimpleString("import Hunter;");
+			PyRun_SimpleString(scan.c_str());
+			Py_Finalize();
+			std::cout << "JSON: " << md5 << ".json\n";
+		}
+		catch (std::exception &e) {
+			std::cout << e.what() << "\n";
+		}
 	}
 }
