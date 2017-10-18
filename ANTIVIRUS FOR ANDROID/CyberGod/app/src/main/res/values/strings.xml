@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CyberGod</string>
+    <string name="version">version 1.0.0</string>
+    <string name="start_scan">START SCAN</string>
+    <string name="scannedFiles">Files Scanned:</string>
+    <string name="infectedFiles">Files Infected:</string>
+    <string name="fileName">File Name:</string>
+    <string name="threatName">Threat Name:</string>
+    <string name="fileLocation">Location:</string>
+</resources>
