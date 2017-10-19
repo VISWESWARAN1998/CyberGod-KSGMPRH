@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
     private volatile boolean running;
     private Animation scanningAnimation;
     private final int READ_FILE_REQUEST_CODE = 777;
-    private ListView detectionsList;
     private ArrayList<DetectionsDisplay> detections;
     private ArrayAdapter<DetectionsDisplay> detectionsDisplayArrayAdapter;
 
@@ -56,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         scanningFile = (TextView) findViewById(R.id.scanningFileTextView);
         filesScanned = (TextView) findViewById(R.id.filesScannedTextView);
         filesInfected = (TextView) findViewById(R.id.infectedFilesTextView);
-        detectionsList = (ListView) findViewById(R.id.detectionsListView);
+        ListView detectionsList = (ListView) findViewById(R.id.detectionsListView);
         toolbar.inflateMenu(R.menu.main_menu_toolbar);
 
         askPermission(Manifest.permission.READ_EXTERNAL_STORAGE, READ_FILE_REQUEST_CODE);
@@ -97,6 +96,9 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.aboutMenuId:
                         Intent intent = new Intent(MainActivity.this, AboutActivity.class);
                         startActivity(intent);
+                        break;
+                    default:
+                        return false;
                 }
                 return true;
             }
@@ -120,12 +122,11 @@ public class MainActivity extends AppCompatActivity {
      */
     boolean canScan()
     {
-        if(ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) return true;
-        return false;
+        return (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED);
     }
 
     // This is used to ask File Access Permission from android
-    void askPermission(String permission, int requestCode)
+    private void askPermission(String permission, int requestCode)
     {
         if(ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED)
         {
@@ -134,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // This is used to rotate a small gear[Animation] in the scanning process
-    void showAnimation()
+    private void showAnimation()
     {
         this.runOnUiThread(new Runnable() {
             @Override
@@ -145,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    void hideAnimation()
+    private void hideAnimation()
     {
         this.runOnUiThread(new Runnable() {
             @Override
@@ -168,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Updates scanning file to TextView
-    synchronized void updateScanningFile(final String file)
+    private synchronized void updateScanningFile(final String file)
     {
         this.runOnUiThread(new Runnable() {
             @Override
@@ -201,7 +202,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Display a threat in the ListView
-    synchronized void updateThreat(final String programName, final String threatName, final String location)
+    private synchronized void updateThreat(final String programName, final String threatName, final String location)
     {
         this.runOnUiThread(new Runnable() {
             @Override
