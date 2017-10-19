@@ -1,13 +1,10 @@
 package com.shiva.cybergod;
 
 import android.Manifest;
-import android.content.Context;
-import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Environment;
-import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
@@ -28,22 +25,13 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
-
 import java.io.File;
-import java.security.Permission;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.concurrent.Semaphore;
-
 import scan.DetectionsDisplay;
 import scan.ScanFile;
 
 
 public class MainActivity extends AppCompatActivity {
-
-    private Toolbar toolbar;
     private Button startScan, stopScan;
     private ImageView scanningGear;
     public TextView scanningFile, filesScanned, filesInfected;
@@ -53,15 +41,15 @@ public class MainActivity extends AppCompatActivity {
     private Animation scanningAnimation;
     private final int READ_FILE_REQUEST_CODE = 777;
     private ListView detectionsList;
-    ArrayList<DetectionsDisplay> detections;
-    ArrayAdapter<DetectionsDisplay> detectionsDisplayArrayAdapter;
+    private ArrayList<DetectionsDisplay> detections;
+    private ArrayAdapter<DetectionsDisplay> detectionsDisplayArrayAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        toolbar = (Toolbar) findViewById(R.id.mainToolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.mainToolbar);
         startScan = (Button) findViewById(R.id.startScanButton);
         stopScan = (Button) findViewById(R.id.stopScanButton);
         scanningGear = (ImageView) findViewById(R.id.scanningGearImage);
@@ -69,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
         filesScanned = (TextView) findViewById(R.id.filesScannedTextView);
         filesInfected = (TextView) findViewById(R.id.infectedFilesTextView);
         detectionsList = (ListView) findViewById(R.id.detectionsListView);
-        toolbar = (Toolbar) findViewById(R.id.mainToolbar);
         toolbar.inflateMenu(R.menu.main_menu_toolbar);
 
         askPermission(Manifest.permission.READ_EXTERNAL_STORAGE, READ_FILE_REQUEST_CODE);
@@ -299,10 +286,9 @@ public class MainActivity extends AppCompatActivity {
 
             DetectionsDisplay display = detections.get(position);
 
-            TextView programName, threatName, threatLocation;
-            programName = (TextView) view.findViewById(R.id.programNameTextView);
-            threatName = (TextView) view.findViewById(R.id.threatNameTextView);
-            threatLocation = (TextView) view.findViewById(R.id.threatLocationTextView);
+            TextView programName =  (TextView) view.findViewById(R.id.programNameTextView);
+            TextView threatName = (TextView) view.findViewById(R.id.threatNameTextView);
+            TextView threatLocation = (TextView) view.findViewById(R.id.threatLocationTextView);
 
             programName.setText(display.getFileName());
             threatName.setText(display.getFileDescription());
