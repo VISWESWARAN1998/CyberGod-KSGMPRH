@@ -1,5 +1,7 @@
 # CyberGod KSGMPRH
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d007f1ba64594f11a0eb41b518968475)](https://www.codacy.com/app/VISWESWARAN1998/CyberGod-KSGMPRH?utm_source=github.com&utm_medium=referral&utm_content=VISWESWARAN1998/CyberGod-KSGMPRH&utm_campaign=badger)
+
 This is an open-source anti-virus which comes along with a bunch of tools which is useful for your day-to-day activity. This security toolkit is programmed in such a way that it will work with your primary anti-virus/anti-malware solution without making much performance hit.
 
 Scanning the system for malware:
