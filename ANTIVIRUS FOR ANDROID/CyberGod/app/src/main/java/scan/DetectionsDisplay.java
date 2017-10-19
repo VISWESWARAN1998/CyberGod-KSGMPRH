@@ -9,9 +9,9 @@ package scan;
  */
 public class DetectionsDisplay
 {
-    String fileName;
-    String fileLoaction;
-    String fileDescription;
+    private String fileName;
+    private String fileLoaction;
+    private String fileDescription;
 
     public DetectionsDisplay(String fileName, String fileDescription, String fileLoaction) {
         this.fileName = fileName;
