@@ -17,13 +17,14 @@ import java.util.Arrays;
 * @version 1.0
 * This class is used to find whether the executable is packed with UPX or not
 */
-public class UPX extends EXE
+public class UPX extends Application
 {
-	String fileLocation; // This will hold the name of the file
-	Integer exeSizeLimit; // This will hold the size limit of the .EXE e.g: if 10, the program will scan for 
+	private String fileLocation; // This will hold the name of the file
+	private Integer exeSizeLimit; // This will hold the size limit of the .EXE e.g: if 10, the program will scan for
 						  // .EXE which is greater than 10 MB
-        final String[] upxStrings = {"UPX0", "UPX1", "UPX!"};
-	ArrayList<String> upxStringList = null;
+
+	private final String[] upxStrings = {"UPX0", "UPX1", "UPX!"};
+	private ArrayList<String> upxStringList = null;
 	
 	 /**
 	 @param fileLocation Holds the location of the file
