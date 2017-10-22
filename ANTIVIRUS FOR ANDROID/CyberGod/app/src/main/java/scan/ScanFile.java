@@ -12,8 +12,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Enumeration;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import strings.MaliciousStrings;
@@ -23,8 +21,8 @@ import strings.MaliciousStrings;
  * @author Visweswaran
  */
 public class ScanFile {
-    String fileLocation;
-    String threatName;
+    private String fileLocation;
+    private String threatName;
 
 
     /**
@@ -42,8 +40,7 @@ public class ScanFile {
     {
         threatName = null;
         // If it is an apk and contains malicious strings
-        if(isApk() && isStringPresent()) return true;
-        return false;
+        return isApk() && isStringPresent();
     }
     /**
      * @return will return true if the specified location is .APK
@@ -72,7 +69,7 @@ public class ScanFile {
                 ZipEntry zipEntry = zipEntries.nextElement();
                 String zipFileName = zipEntry.getName();
                 // Once the classes.dex file is found, read and check whether the string is present
-                if(zipFileName.equals("classes.dex"))
+                if("classes.dex".equals(zipFileName))
                 {
                     //System.out.println("clsses.dex found!");
                     InputStream stream = zipFile.getInputStream(zipEntry);
