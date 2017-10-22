@@ -4,11 +4,11 @@
  * and open the template in the editor.
  */
 
-downloadCount=0;
 
 
 function download()
 {
+	downloadCount=0;
     downloadCount++;
     document.getElementById("noOfDownloads").innerHTML= downloadCount;
     window.open("https://github.com/VISWESWARAN1998/CyberGod-KSGMPRH/releases/tag/1.0","_self");
