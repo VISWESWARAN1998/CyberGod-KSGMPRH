@@ -1,0 +1,31 @@
+<RCC>
+    <qresource prefix="/banners">
+        <file>banner.png</file>
+        <file>usb_banner.png</file>
+        <file>aboutus_banner.png</file>
+        <file>rubber_ducky_banner.png</file>
+        <file>hexagonal_banner.png</file>
+    </qresource>
+    <qresource prefix="/menu_icons">
+        <file>scan_menu.png</file>
+        <file>usb_menu.png</file>
+        <file>network_icon.png</file>
+        <file>update.png</file>
+    </qresource>
+    <qresource prefix="/buttons">
+        <file>scan_tab_scan_button.png</file>
+        <file>clean_brush.png</file>
+    </qresource>
+    <qresource prefix="/tables">
+        <file>threat.png</file>
+        <file>threat_location.png</file>
+    </qresource>
+    <qresource prefix="/dialogs">
+        <file>usb_image.png</file>
+        <file>paypal_donate.png</file>
+    </qresource>
+    <qresource prefix="/tabs">
+        <file>network.png</file>
+        <file>duplicate.png</file>
+    </qresource>
+</RCC>
